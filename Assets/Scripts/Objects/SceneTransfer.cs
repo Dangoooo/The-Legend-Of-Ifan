@@ -18,7 +18,7 @@ public class SceneTransfer : MonoBehaviour
     }*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player"&&collision.isTrigger)
+        if(collision.gameObject.tag == "Player"&&!collision.isTrigger)
         {
             playerPosition.initialValue = Position;
             //SceneManager.LoadScene(sceneToLoad);

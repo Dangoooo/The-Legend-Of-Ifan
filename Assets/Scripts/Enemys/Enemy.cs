@@ -24,10 +24,13 @@ public class Enemy : MonoBehaviour
     }
     public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage)
     {
-        TakeDamage(damage);
-        if(health>0)
+        if(currentState != EnemyState.stagger)
         {
-            StartCoroutine(KnockCo(myRigidbody, knockTime));
+            TakeDamage(damage);
+            if (health > 0)
+            {
+                StartCoroutine(KnockCo(myRigidbody, knockTime));
+            }
         }
     }
     IEnumerator KnockCo(Rigidbody2D myRigidbody, float knockTime)

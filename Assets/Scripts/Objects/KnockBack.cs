@@ -24,20 +24,20 @@ public class KnockBack : MonoBehaviour
         {
             collision.GetComponent<Pot>().Destroy();
         }
-        if (collision.gameObject.tag == "Enemy"||collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Enemy"||collision.gameObject.tag == "Player"&&!collision.isTrigger)
         {
             Rigidbody2D hit = collision.GetComponent<Rigidbody2D>();
             if(hit != null)
             {
                 if(collision.gameObject.tag == "Enemy")
                 {
-                    hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
                     collision.GetComponent<Enemy>().Knock(hit, knockTime, damage);
+                    hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
                 }
                 if(collision.gameObject.tag == "Player")
                 {
-                    hit.GetComponent<PlayerMove>().currentState = PlayerState.stagger;
                     collision.GetComponent<PlayerMove>().Knock(knockTime, damage);
+                    hit.GetComponent<PlayerMove>().currentState = PlayerState.stagger;
                 }
                 Vector2 difference = hit.transform.position - transform.position;
                 hit.AddForce(difference.normalized* thrust, ForceMode2D.Impulse);

@@ -23,6 +23,7 @@ public class PlayerMove : MonoBehaviour
     public Inventory playerInventory;
     public SpriteRenderer receiveItemSprite;
     public GameObject receiveItem;
+    public Signal screenKickSignal;
     void Start()
     {
         transform.position = playerPosition.initialValue;
@@ -111,15 +112,19 @@ public class PlayerMove : MonoBehaviour
 
     public void Knock(float knockTime, float damage)
     {
-        currentHealth.initialValue -= damage;
-        playerHealthSignal.Raise();
-        if (currentHealth.initialValue>0)
-        { 
-            StartCoroutine(KnockCo(knockTime));
-        }
-        else
+        if(currentState != PlayerState.stagger)
         {
-            this.gameObject.SetActive(false);
+            screenKickSignal.Raise();
+            currentHealth.initialValue -= damage;
+            playerHealthSignal.Raise();
+            if (currentHealth.initialValue > 0)
+            {
+                StartCoroutine(KnockCo(knockTime));
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
+            }
         }
     }
     IEnumerator KnockCo(float knockTime)
@@ -129,7 +134,6 @@ public class PlayerMove : MonoBehaviour
             yield return new WaitForSeconds(knockTime);
             myRigidbody.velocity = Vector2.zero;
             currentState = PlayerState.idle;
-
         }
     }
 }

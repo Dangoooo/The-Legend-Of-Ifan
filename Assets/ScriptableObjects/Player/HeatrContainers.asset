@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28941943471fec4990222b35c52d5db, type: 3}
   m_Name: HeatrContainers
   m_EditorClassIdentifier: 
-  defaultValue: 5
-  initialValue: 5
+  defaultValue: 3
+  initialValue: 3

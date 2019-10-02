@@ -697,6 +697,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 021ab5adeec22474f9bcef5453a860ae, type: 2}
   receiveItemSprite: {fileID: 113780580}
   receiveItem: {fileID: 113780578}
+  screenKickSignal: {fileID: 11400000, guid: d1257353a8e4d834d8fed54f65b8d653, type: 2}
 --- !u!114 &2069395349
 MonoBehaviour:
   m_ObjectHideFlags: 0
