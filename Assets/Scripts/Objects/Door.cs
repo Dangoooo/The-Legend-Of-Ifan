@@ -12,13 +12,18 @@ public class Door : Interactable
 {
     public DoorType currentDoorType;
     public Inventory playerInventory;
-    public bool isOpen;
+    public BoolValue isOpen;
     public SpriteRenderer doorSprite;
     public Sprite doorOpenSprite;
+    public Sprite doorCloseSprite;
     public BoxCollider2D physicisCollider;
     void Start()
     {
-        
+        if(isOpen.initialValue)
+        {
+            doorSprite.sprite = doorOpenSprite;
+            physicisCollider.enabled = false;
+        }
     }
 
     
@@ -26,11 +31,12 @@ public class Door : Interactable
     {
         if(Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
-            if(!isOpen)
+            if(!isOpen.initialValue)
             {
                 if(playerInventory.numberOfKeys>0&&currentDoorType == DoorType.key)
                 {
                     OpenDoor();
+                    contextClueSignal.Raise();
                 }
             }
             else
@@ -40,23 +46,27 @@ public class Door : Interactable
         }
     }
 
-    private void OpenDoor()
+    public void OpenDoor()
     {
-        isOpen = true;
-        playerInventory.numberOfKeys--;
+        isOpen.initialValue = true;
+        if(currentDoorType == DoorType.key)
+        {
+            playerInventory.numberOfKeys--;
+        }
         doorSprite.sprite = doorOpenSprite;
         physicisCollider.enabled = false;
-        contextClueSignal.Raise();
     }
 
-    private void CloseDoor()
+    public void CloseDoor()
     {
-
+        isOpen.initialValue = false;
+        doorSprite.sprite = doorCloseSprite;
+        physicisCollider.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !collision.isTrigger && !isOpen)
+        if (collision.gameObject.tag == "Player" && !collision.isTrigger && !isOpen.initialValue)
         {
             contextClueSignal.Raise();
             playerInRange = true;
@@ -65,7 +75,7 @@ public class Door : Interactable
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !collision.isTrigger && !isOpen)
+        if (collision.gameObject.tag == "Player" && !collision.isTrigger && !isOpen.initialValue)
         {
             contextClueSignal.Raise();
             playerInRange = false;

@@ -18,9 +18,12 @@ public class Enemy : MonoBehaviour
     public int baseAttack;
     public string enemyName;
     public GameObject deathEffect;
+    public Vector2 homePosition;
+    public Signal enemyOpenDoorSignal;
     private void Awake()
     {
         health = maxHealth.initialValue;
+        transform.position = homePosition;
     }
     public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage)
     {
@@ -49,6 +52,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if(health<=0)
         {
+            enemyOpenDoorSignal.Raise();
             this.gameObject.SetActive(false);
             DeathEffect();
         }

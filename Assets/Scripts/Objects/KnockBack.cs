@@ -24,7 +24,7 @@ public class KnockBack : MonoBehaviour
         {
             collision.GetComponent<Pot>().Destroy();
         }
-        if (collision.gameObject.tag == "Enemy"||collision.gameObject.tag == "Player"&&!collision.isTrigger)
+        if (collision.gameObject.tag == "Enemy"||collision.gameObject.tag == "Player"&&collision.isTrigger)
         {
             Rigidbody2D hit = collision.GetComponent<Rigidbody2D>();
             if(hit != null)

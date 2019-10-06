@@ -171,6 +171,6 @@ MonoBehaviour:
   content: {fileID: 11400000, guid: 018e7e53065462a4fac5c2b02bdf07ae, type: 2}
   playerInventory: {fileID: 11400000, guid: 021ab5adeec22474f9bcef5453a860ae, type: 2}
   raiseItemSignal: {fileID: 11400000, guid: 546238ded081c0e4da0235624ee5f88a, type: 2}
-  isOpen: 0
+  isOpen: {fileID: 11400000, guid: 5becca0b3e604c942a2e95a8d40cd4ad, type: 2}
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}

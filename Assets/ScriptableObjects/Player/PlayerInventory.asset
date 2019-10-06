@@ -19,4 +19,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 018e7e53065462a4fac5c2b02bdf07ae, type: 2}
   - {fileID: 11400000, guid: 018e7e53065462a4fac5c2b02bdf07ae, type: 2}
   - {fileID: 11400000, guid: 018e7e53065462a4fac5c2b02bdf07ae, type: 2}
-  numberOfKeys: 8
+  numberOfKeys: 75
+  numberOfCoins: 0

@@ -8,13 +8,17 @@ public class TreasureChest : Interactable
     public Item content;
     public Inventory playerInventory;
     public Signal raiseItemSignal;
-    public bool isOpen;
+    public BoolValue isOpen;
     public GameObject dialogBox;
     public Text dialogText;
     private Animator anim;
     void Start()
     {
         anim = GetComponent<Animator>();
+        if(isOpen.initialValue)
+        {
+            anim.SetBool("open", true);
+        }
     }
 
     
@@ -22,7 +26,7 @@ public class TreasureChest : Interactable
     {
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
-            if(!isOpen)
+            if(!isOpen.initialValue)
             {
                 OpenChest();
             }
@@ -36,7 +40,7 @@ public class TreasureChest : Interactable
 
     public void OpenChest()
     {
-        isOpen = true;
+        isOpen.initialValue = true;
         contextClueSignal.Raise();
         dialogBox.SetActive(true);
         dialogText.text = content.itemDescription;
@@ -55,7 +59,7 @@ public class TreasureChest : Interactable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !collision.isTrigger && !isOpen)
+        if (collision.gameObject.tag == "Player" && !collision.isTrigger && !isOpen.initialValue)
         {
             contextClueSignal.Raise();
             playerInRange = true;
@@ -64,7 +68,7 @@ public class TreasureChest : Interactable
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !collision.isTrigger && !isOpen)
+        if (collision.gameObject.tag == "Player" && !collision.isTrigger && !isOpen.initialValue)
         {
             contextClueSignal.Raise();
             playerInRange = false;

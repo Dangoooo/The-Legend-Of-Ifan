@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 50734779}
   - component: {fileID: 50734778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ContextClue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 113780579}
   - component: {fileID: 113780580}
   - component: {fileID: 113780581}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ReceiveItem
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 3615418326933258912}
   - component: {fileID: 3615418326933258919}
   - component: {fileID: 3615418326933258918}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hitBoxLeft
   m_TagString: Hit
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 3615418327741507201}
   - component: {fileID: 3615418327741507200}
   - component: {fileID: 3615418327741507207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hitBoxDown
   m_TagString: Hit
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 3615418327959404151}
   - component: {fileID: 3615418327959404150}
   - component: {fileID: 3615418327959404149}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hitBoxUp
   m_TagString: Hit
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 3615418328133820834}
   - component: {fileID: 3615418328133820833}
   - component: {fileID: 3615418328133820832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hitBoxRight
   m_TagString: Hit
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 2069395349}
   - component: {fileID: 1340996745}
   - component: {fileID: 1340996737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ifan
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.001506567, y: -0.46953565}
+  m_Offset: {x: -0.0046343803, y: -0.46953565}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -630,7 +630,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.50284386, y: 0.32026303}
+  m_Size: {x: 0.6870794, y: 0.32026303}
   m_EdgeRadius: 0
 --- !u!95 &3615418328161044494
 Animator:

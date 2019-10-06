@@ -8,10 +8,10 @@ public class Log : Enemy
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
-    protected Animator anim;
+    public Animator anim;
     void Start()
     {
-        currentState = EnemyState.idle;
+        currentState = EnemyState.walk;
         myRigidbody = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
         anim = GetComponent<Animator>();
