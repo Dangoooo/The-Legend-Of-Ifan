@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 2069395349}
   - component: {fileID: 1340996745}
   - component: {fileID: 1340996737}
+  - component: {fileID: 741552389}
   m_Layer: 8
   m_Name: Ifan
   m_TagString: Player
@@ -689,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b42751d3b0ed8418d1d1ccbf5226d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  currentState: 4
   speed: 8
   currentHealth: {fileID: 11400000, guid: 0a41e200fe09706468046c350ffd8ea7, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: e522d3a5bd8107c428bb006d25fa1b8c, type: 2}
@@ -698,6 +699,11 @@ MonoBehaviour:
   receiveItemSprite: {fileID: 113780580}
   receiveItem: {fileID: 113780578}
   screenKickSignal: {fileID: 11400000, guid: d1257353a8e4d834d8fed54f65b8d653, type: 2}
+  projectile: {fileID: 2874934159208068172, guid: 095d6be2e1352d74eaba50a324344506,
+    type: 3}
+  decreaseMagicSignal: {fileID: 11400000, guid: 1616f41a405b21e4783ff1bf7363d0be,
+    type: 2}
+  playerMagic: {fileID: 11400000, guid: f509b4762c5c83043b0fd3cf4d67830d, type: 2}
 --- !u!114 &2069395349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,3 +775,51 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &741552389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615418328161044500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: a34f982d396c43f4690e259520532657, type: 2}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 3072
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0

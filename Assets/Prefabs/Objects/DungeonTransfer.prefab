@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6527562d156687a46b227e22328248e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 0.1, y: -5.2}
+  Position: {x: 8.5, y: -16}
   playerPosition: {fileID: 11400000, guid: 59bcec906e84bba4db11c5b548e6f2d3, type: 2}
   sceneToLoad: Scene_2
   fadeOut: {fileID: 1543843984566204844, guid: bc26dab8dec430b4196194bb96c25770, type: 3}

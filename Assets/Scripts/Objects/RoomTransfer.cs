@@ -55,7 +55,7 @@ public class RoomTransfer : MonoBehaviour
         }
     }
 
-    public IEnumerator PlaceNameCo()
+    public       IEnumerator PlaceNameCo()
     {
         if(text != null)
         {

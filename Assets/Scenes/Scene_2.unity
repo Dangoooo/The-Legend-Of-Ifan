@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 26912897}
   - component: {fileID: 26912898}
   - component: {fileID: 26912899}
+  - component: {fileID: 26912900}
   m_Layer: 0
   m_Name: CM vcam4
   m_TagString: Untagged
@@ -199,6 +200,21 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 474665174}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &26912900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26912896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1 &33532902
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +226,7 @@ GameObject:
   - component: {fileID: 33532903}
   - component: {fileID: 33532904}
   - component: {fileID: 33532905}
+  - component: {fileID: 33532906}
   m_Layer: 0
   m_Name: CM vcam5
   m_TagString: Untagged
@@ -286,6 +303,21 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1876452308}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &33532906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33532902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1 &69187604
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,6 +775,7 @@ GameObject:
   - component: {fileID: 228524486}
   - component: {fileID: 228524487}
   - component: {fileID: 228524488}
+  - component: {fileID: 228524489}
   m_Layer: 0
   m_Name: CM vcam3
   m_TagString: Untagged
@@ -819,6 +852,21 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 177650382}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &228524489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228524485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1 &244966354
 GameObject:
   m_ObjectHideFlags: 3
@@ -1724,6 +1772,7 @@ GameObject:
   - component: {fileID: 484727960}
   - component: {fileID: 484727961}
   - component: {fileID: 484727962}
+  - component: {fileID: 484727963}
   m_Layer: 0
   m_Name: CM vcam2
   m_TagString: Untagged
@@ -1800,6 +1849,21 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1284917115}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &484727963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484727959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1 &507232575
 GameObject:
   m_ObjectHideFlags: 0
@@ -7067,6 +7131,7 @@ GameObject:
   - component: {fileID: 983851551}
   - component: {fileID: 983851552}
   - component: {fileID: 983851553}
+  - component: {fileID: 983851554}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -7143,6 +7208,21 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1933612090}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &983851554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983851550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1 &1090872327
 GameObject:
   m_ObjectHideFlags: 0

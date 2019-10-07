@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pot : MonoBehaviour
 {
     private Animator anim;
+    public LootTable lootTable;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -26,5 +27,18 @@ public class Pot : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         this.gameObject.SetActive(false);
+        CreateLoot();
+    }
+
+    private void CreateLoot()
+    {
+        if (lootTable != null)
+        {
+            PowerUp power = lootTable.CreateLoot();
+            if (power != null)
+            {
+                Instantiate(power.gameObject, transform.position, Quaternion.identity);
+            }
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeartHeal : PowerUp
 {
-    public Signal playerHealthSignal;
+    public Signal healthSignal;
     public FloatValue playerHealth;
     public float healthIncrease;
     public FloatValue heartContainers;
@@ -28,7 +28,7 @@ public class HeartHeal : PowerUp
             {
                 playerHealth.initialValue = heartContainers.initialValue*2;
             }
-            playerHealthSignal.Raise();
+            healthSignal.Raise();
             Destroy(this.gameObject);
         }
     }

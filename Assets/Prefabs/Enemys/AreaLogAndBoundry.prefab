@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4418974420745659902}
   m_Layer: 0
   m_Name: AreaLogAndBoundry
-  m_TagString: Untagged
+  m_TagString: Boundry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,9 +42,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4418974420784727645}
   - component: {fileID: 4418974420784727644}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Boundry1
-  m_TagString: Untagged
+  m_TagString: Boundry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -301,7 +301,11 @@ MonoBehaviour:
   enemyName: AreaLog
   deathEffect: {fileID: 6630030916625991011, guid: 62acc29dbb469a94786f9d3cd019dcfb,
     type: 3}
+  homePosition: {x: 0, y: 0}
+  enemyOpenDoorSignal: {fileID: 0}
+  lootTable: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 6
   attackRadius: 1
+  anim: {fileID: 0}
   boundry: {fileID: 4418974420784727644}

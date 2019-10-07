@@ -24,6 +24,9 @@ public class PlayerMove : MonoBehaviour
     public SpriteRenderer receiveItemSprite;
     public GameObject receiveItem;
     public Signal screenKickSignal;
+    public GameObject projectile;
+    public Signal decreaseMagicSignal;
+    public FloatValue playerMagic;
     void Start()
     {
         transform.position = playerPosition.initialValue;
@@ -46,7 +49,15 @@ public class PlayerMove : MonoBehaviour
         change.y = Input.GetAxisRaw("Vertical");
         if(Input.GetButtonDown("Attack") && currentState != PlayerState.attack&&currentState != PlayerState.stagger)
         {
-            StartCoroutine(AttackCo());
+                StartCoroutine(AttackCo());
+        }
+        else if (Input.GetButtonDown("SecondWeapen") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
+        {
+            if (playerMagic.initialValue > 0)
+            {
+                StartCoroutine(SecondAttackCo());
+            }
+              
         }
         else if (currentState == PlayerState.walk||currentState == PlayerState.idle)
         {
@@ -62,6 +73,18 @@ public class PlayerMove : MonoBehaviour
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(0.3f);
         if(currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.idle;
+        }
+    }
+
+    private IEnumerator SecondAttackCo()
+    {
+        currentState = PlayerState.attack;
+        yield return null;
+        CreateArrow();
+        yield return new WaitForSeconds(0.3f);
+        if (currentState != PlayerState.interact)
         {
             currentState = PlayerState.idle;
         }
@@ -135,5 +158,14 @@ public class PlayerMove : MonoBehaviour
             myRigidbody.velocity = Vector2.zero;
             currentState = PlayerState.idle;
         }
+    }
+
+    private void CreateArrow()
+    {
+        Arrow arrow = Instantiate(projectile, transform.position, transform.rotation).GetComponent<Arrow>();
+        float temp = Mathf.Atan2(animator.GetFloat("moveY"), animator.GetFloat("moveX")) * Mathf.Rad2Deg;
+        Vector3 direction = new Vector3(0, 0, temp);
+        arrow.Launch(new Vector2(animator.GetFloat("moveX"), animator.GetFloat("moveY")), direction);
+        decreaseMagicSignal.Raise();
     }
 }

@@ -139,7 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d606ba5225b0e649b14c084a6cdcd33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthSignal: {fileID: 11400000, guid: e522d3a5bd8107c428bb006d25fa1b8c, type: 2}
+  powerUpSignal: {fileID: 0}
+  healthSignal: {fileID: 11400000, guid: e522d3a5bd8107c428bb006d25fa1b8c, type: 2}
   playerHealth: {fileID: 11400000, guid: 0a41e200fe09706468046c350ffd8ea7, type: 2}
   healthIncrease: 2
   heartContainers: {fileID: 11400000, guid: 143b36ff357899948a1a37a331e7855a, type: 2}

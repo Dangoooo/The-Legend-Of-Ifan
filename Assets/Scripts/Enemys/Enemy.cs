@@ -20,7 +20,15 @@ public class Enemy : MonoBehaviour
     public GameObject deathEffect;
     public Vector2 homePosition;
     public Signal enemyOpenDoorSignal;
+    public LootTable lootTable;
     private void Awake()
+    {
+        health = maxHealth.initialValue;
+        transform.position = homePosition;
+        
+    }
+
+    private void OnEnable()
     {
         health = maxHealth.initialValue;
         transform.position = homePosition;
@@ -52,7 +60,11 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if(health<=0)
         {
-            enemyOpenDoorSignal.Raise();
+            if(enemyOpenDoorSignal != null)
+            {
+                enemyOpenDoorSignal.Raise();
+            }
+            CreateLoot();
             this.gameObject.SetActive(false);
             DeathEffect();
         }
@@ -64,6 +76,18 @@ public class Enemy : MonoBehaviour
         {
             GameObject gb = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gb, 1f);
+        }
+    }
+
+    private void CreateLoot()
+    {
+        if(lootTable != null)
+        {
+            PowerUp power = lootTable.CreateLoot();
+            if(power != null)
+            {
+                Instantiate(power.gameObject, transform.position, Quaternion.identity);
+            }
         }
     }
 }
