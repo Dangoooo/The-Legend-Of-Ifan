@@ -1968,9 +1968,9 @@ TextureImporter:
       name: objects_101
       rect:
         serializedVersion: 2
-        x: 66
+        x: 64
         y: 177
-        width: 12
+        width: 16
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1988,9 +1988,9 @@ TextureImporter:
       name: objects_102
       rect:
         serializedVersion: 2
-        x: 83
+        x: 80
         y: 177
-        width: 11
+        width: 16
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2008,9 +2008,9 @@ TextureImporter:
       name: objects_103
       rect:
         serializedVersion: 2
-        x: 100
+        x: 96
         y: 177
-        width: 10
+        width: 16
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2028,9 +2028,9 @@ TextureImporter:
       name: objects_104
       rect:
         serializedVersion: 2
-        x: 115
+        x: 112
         y: 177
-        width: 11
+        width: 16
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
