@@ -18,7 +18,7 @@ public class StartMenu : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("Scene_1");
+        SceneManager.LoadScene("OpeningCutScene");
     }
 
     public void Quit()

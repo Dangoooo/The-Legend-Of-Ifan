@@ -6,7 +6,7 @@ using UnityEngine;
 public class VectorValue : ScriptableObject, ISerializationCallbackReceiver
 {
     public Vector2 defaultValue;
-    [HideInInspector]
+    //[HideInInspector]
     public Vector2 initialValue;
 
     public void OnAfterDeserialize()

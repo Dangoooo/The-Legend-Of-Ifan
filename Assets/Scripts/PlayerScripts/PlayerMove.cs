@@ -71,7 +71,7 @@ public class PlayerMove : MonoBehaviour
         animator.SetBool("attacking", true);
         yield return null;
         animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(0.3f);
+        //yield return new WaitForSeconds(0.3f);
         if(currentState != PlayerState.interact)
         {
             currentState = PlayerState.idle;
