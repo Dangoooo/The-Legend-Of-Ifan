@@ -11,8 +11,11 @@ public class Interactable : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !collision.isTrigger)
         {
-            contextClueSignal.Raise();
-            playerInRange = true;
+            if(contextClueSignal != null)
+            {
+                contextClueSignal.Raise();
+                playerInRange = true;
+            }
         }
     }
 
@@ -20,8 +23,11 @@ public class Interactable : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !collision.isTrigger)
         {
-            contextClueSignal.Raise();
-            playerInRange = false;
+            if(contextClueSignal != null)
+            {
+                contextClueSignal.Raise();
+                playerInRange = false;
+            }
         }
     }
 }
