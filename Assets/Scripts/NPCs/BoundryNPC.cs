@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoundryNPC : Interactable
 {
@@ -11,6 +12,9 @@ public class BoundryNPC : Interactable
     public float speed;
     public GameObject target;
     private bool isInteractable;
+    public GameObject dialogBox;
+    public Text dialogText;
+    public string dialog;
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -86,7 +90,18 @@ public class BoundryNPC : Interactable
     {
         if(Input.GetButtonDown("Attack") && playerInRange)
         {
-            isInteractable = true;
+            
+            if (dialogBox.activeInHierarchy)
+            {
+                dialogBox.SetActive(false);
+                isInteractable = false;
+            }
+            else
+            {
+                dialogBox.SetActive(true);
+                dialogText.text = dialog;
+                isInteractable = true;
+            }
         }
     }
 }

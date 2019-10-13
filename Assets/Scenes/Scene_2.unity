@@ -418,14 +418,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1359897125, guid: bfe04edbd7a922c459558a94b4a0e2b7, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359897125, guid: bfe04edbd7a922c459558a94b4a0e2b7, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4935187652856320661, guid: bfe04edbd7a922c459558a94b4a0e2b7,
         type: 3}
       propertyPath: m_Offset.y
@@ -460,6 +452,14 @@ PrefabInstance:
         type: 3}
       propertyPath: Position.y
       value: -26.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359897125, guid: bfe04edbd7a922c459558a94b4a0e2b7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359897125, guid: bfe04edbd7a922c459558a94b4a0e2b7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfe04edbd7a922c459558a94b4a0e2b7, type: 3}
@@ -994,6 +994,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7650127605327704856, guid: 1f52b499c5dc3e442958fe687c9f51ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650127605327704861, guid: 1f52b499c5dc3e442958fe687c9f51ef,
+        type: 3}
+      propertyPath: m_Text
+      value: dungeon room 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650127605327704861, guid: 1f52b499c5dc3e442958fe687c9f51ef,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7650127605370083012, guid: 1f52b499c5dc3e442958fe687c9f51ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1099,20 +1114,9 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7650127605327704856, guid: 1f52b499c5dc3e442958fe687c9f51ef,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7650127605327704861, guid: 1f52b499c5dc3e442958fe687c9f51ef,
-        type: 3}
-      propertyPath: m_Text
-      value: dungeon room 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7650127605327704861, guid: 1f52b499c5dc3e442958fe687c9f51ef,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 30
+    - target: {fileID: 2133782262, guid: 1f52b499c5dc3e442958fe687c9f51ef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7650127605327704863, guid: 1f52b499c5dc3e442958fe687c9f51ef,
         type: 3}
@@ -1747,6 +1751,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d58c853dc61496b4ea744b99f785bc25,
         type: 2}
+    - target: {fileID: 8153593380866140312, guid: ea848ca912663c546a20be3685e06dbb,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1575544579}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea848ca912663c546a20be3685e06dbb, type: 3}
 --- !u!114 &480198214 stripped
@@ -3896,7 +3905,7 @@ PrefabInstance:
     - target: {fileID: 3615418328161044495, guid: 2246e537047a2e246971d69027ff6047,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.1
+      value: -13.73
       objectReference: {fileID: 0}
     - target: {fileID: 3615418328161044495, guid: 2246e537047a2e246971d69027ff6047,
         type: 3}
@@ -3942,6 +3951,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 751151130, guid: 2246e537047a2e246971d69027ff6047, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 751151131, guid: 2246e537047a2e246971d69027ff6047, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2246e537047a2e246971d69027ff6047, type: 3}
@@ -8350,6 +8367,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d58c853dc61496b4ea744b99f785bc25,
         type: 2}
+    - target: {fileID: 8153593380866140312, guid: ea848ca912663c546a20be3685e06dbb,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1575544579}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea848ca912663c546a20be3685e06dbb, type: 3}
 --- !u!114 &1095725448 stripped
@@ -24597,6 +24619,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d58c853dc61496b4ea744b99f785bc25,
         type: 2}
+    - target: {fileID: 8153593380866140312, guid: ea848ca912663c546a20be3685e06dbb,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1575544579}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea848ca912663c546a20be3685e06dbb, type: 3}
 --- !u!1 &1933612087

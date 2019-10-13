@@ -8,10 +8,7 @@ public class DungeonRoomTransfer : RoomTransfer
 
     public void Awake()
     {
-        for (int i = 0; i < doors.Length; i++)
-        {
-            OpenAllDoor();
-        }
+        OpenAllDoor();
     }
 
     public void CheckEnemy()
@@ -23,7 +20,6 @@ public class DungeonRoomTransfer : RoomTransfer
                 return;
             }
         }
-        Debug.Log("jjdjdjk");
         OpenAllDoor();
     }
 
@@ -41,7 +37,7 @@ public class DungeonRoomTransfer : RoomTransfer
             {
                 ChangeActivation(pots[i], true);
             }
-           
+            Invoke("CloseAllDoor", 1f);
         }
     }
 

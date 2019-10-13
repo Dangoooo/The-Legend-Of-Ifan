@@ -9,7 +9,6 @@ public class MagicManager : MonoBehaviour
     void Start()
     {
         magicSlider.value = playerMagic.initialValue;
-        magicSlider.maxValue = playerMagic.initialValue;
     }
 
     public void AddMagic()

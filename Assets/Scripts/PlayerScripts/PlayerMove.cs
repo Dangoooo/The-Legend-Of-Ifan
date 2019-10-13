@@ -23,10 +23,15 @@ public class PlayerMove : MonoBehaviour
     public Inventory playerInventory;
     public SpriteRenderer receiveItemSprite;
     public GameObject receiveItem;
-    public Signal screenKickSignal;
     public GameObject projectile;
     public Signal decreaseMagicSignal;
     public FloatValue playerMagic;
+    public Color flareColor;
+    public Color regularColor;
+    public float flareDuration;
+    private SpriteRenderer mySpriteRenderer;
+    public Collider2D triggerCollider;
+    public int numberOfFlare;
     void Start()
     {
         transform.position = playerPosition.initialValue;
@@ -35,6 +40,7 @@ public class PlayerMove : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -137,7 +143,6 @@ public class PlayerMove : MonoBehaviour
     {
         if(currentState != PlayerState.stagger)
         {
-            screenKickSignal.Raise();
             currentHealth.initialValue -= damage;
             playerHealthSignal.Raise();
             if (currentHealth.initialValue > 0)
@@ -154,10 +159,26 @@ public class PlayerMove : MonoBehaviour
     {
         if (myRigidbody != null)
         {
+            StartCoroutine(FlareCo());
             yield return new WaitForSeconds(knockTime);
             myRigidbody.velocity = Vector2.zero;
             currentState = PlayerState.idle;
         }
+    }
+
+    IEnumerator FlareCo()
+    {
+        int temp = 0;
+        triggerCollider.enabled = false;
+        while(temp<numberOfFlare)
+        {
+            mySpriteRenderer.color = flareColor;
+            yield return new WaitForSeconds(flareDuration);
+            mySpriteRenderer.color = regularColor;
+            yield return new WaitForSeconds(flareDuration);
+            temp++;
+        }
+        triggerCollider.enabled = true;
     }
 
     private void CreateArrow()

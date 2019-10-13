@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SwitchDown1
   m_EditorClassIdentifier: 
   defaultValue: 0
-  initialValue: 1
+  initialValue: 0
