@@ -16,5 +16,10 @@ MonoBehaviour:
   itemDescription: "\u4E00\u628A\u770B\u8D77\u6765\u5E73\u5E73\u65E0\u5947\u7684\u5251"
   itemSprite: {fileID: 21300000, guid: 4afd81eeb5bd19a47ac1ebf9a174cefd, type: 3}
   numberOfItem: 0
-  usable: 0
+  usable: 1
   unique: 1
+  thisEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
