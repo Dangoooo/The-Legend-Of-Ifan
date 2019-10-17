@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c01c89577b485428c13a4bb75c61b9, type: 3}
   m_Name: MasterSword
   m_EditorClassIdentifier: 
-  itemName: "\u5927\u5E08\u4E4B\u5251"
+  itemName: MasterSword
   itemDescription: "\u4E00\u628A\u770B\u8D77\u6765\u5E73\u5E73\u65E0\u5947\u7684\u5251"
-  itemSprite: {fileID: 21300000, guid: 4afd81eeb5bd19a47ac1ebf9a174cefd, type: 3}
-  numberOfItem: 0
-  usable: 1
+  itemSprite: {fileID: 21300000, guid: e57c727af3dca9a4ab3ec51d2aa66eaa, type: 3}
+  numberOfItem: 1
+  usable: 0
   unique: 1
   thisEvent:
     m_PersistentCalls:

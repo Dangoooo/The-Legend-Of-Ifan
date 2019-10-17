@@ -119,4 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a2a41e48fc32543805f73ef8896b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addMagicSignal: {fileID: 11400000, guid: d9928b8d1f387524ca34e82311b2da38, type: 2}
+  powerUpSignal: {fileID: 0}
+  addMagicSignal: {fileID: 11400000, guid: 1616f41a405b21e4783ff1bf7363d0be, type: 2}
+  playerMagic: {fileID: 11400000, guid: f509b4762c5c83043b0fd3cf4d67830d, type: 2}

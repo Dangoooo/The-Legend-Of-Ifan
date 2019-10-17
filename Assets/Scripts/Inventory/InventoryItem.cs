@@ -16,7 +16,18 @@ public class InventoryItem : ScriptableObject
 
     public void Use()
     {
-        Debug.Log("jkdfkf");
-        thisEvent.Invoke();
+        if(numberOfItem > 0)
+        {
+            thisEvent.Invoke();
+        }
+    }
+
+    public void ReduceNumber(int amountToReduce)
+    {
+        numberOfItem -= amountToReduce;
+        if(numberOfItem < 0)
+        {
+            numberOfItem = 0;
+        }
     }
 }

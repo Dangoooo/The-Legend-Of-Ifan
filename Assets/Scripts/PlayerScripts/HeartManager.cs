@@ -28,6 +28,10 @@ public class HeartManager : MonoBehaviour
     public void UpdateHeart()
     {
         InitHeart();
+        if(currentPlayerHealth.initialValue > heartContainers.initialValue*2)
+        {
+            currentPlayerHealth.initialValue = heartContainers.initialValue * 2;
+        }
         float tempHealth = currentPlayerHealth.initialValue / 2;
         for (int i = 0; i < heartContainers.initialValue; i++)
         {

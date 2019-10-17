@@ -5,6 +5,7 @@ using UnityEngine;
 public class MagicBottle : PowerUp
 {
     public Signal addMagicSignal;
+    public FloatValue playerMagic;
     void Start()
     {
         
@@ -18,8 +19,10 @@ public class MagicBottle : PowerUp
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        playerMagic.initialValue += 1;
         if(collision.gameObject.tag == "Player")
         {
+
             addMagicSignal.Raise();
             Destroy(this.gameObject);
         }

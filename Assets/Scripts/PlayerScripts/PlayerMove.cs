@@ -187,6 +187,7 @@ public class PlayerMove : MonoBehaviour
         float temp = Mathf.Atan2(animator.GetFloat("moveY"), animator.GetFloat("moveX")) * Mathf.Rad2Deg;
         Vector3 direction = new Vector3(0, 0, temp);
         arrow.Launch(new Vector2(animator.GetFloat("moveX"), animator.GetFloat("moveY")), direction);
+        playerMagic.initialValue -= 1;
         decreaseMagicSignal.Raise();
     }
 }

@@ -11,20 +11,13 @@ public class MagicManager : MonoBehaviour
         magicSlider.value = playerMagic.initialValue;
     }
 
-    public void AddMagic()
+    public void UpdateMagic()
     {
-        magicSlider.value += 1;
-        playerMagic.initialValue += 1;
+        magicSlider.value = playerMagic.initialValue;
         if(magicSlider.value > magicSlider.maxValue)
         {
             magicSlider.value = magicSlider.maxValue;
         }
-    }
-
-    public void DecreaseMagic()
-    {
-        magicSlider.value -= 1;
-        playerMagic.initialValue -= 1;
         if (magicSlider.value < 0)
         {
             magicSlider.value = 0;

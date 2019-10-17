@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
         {
             for (int i = 0; i < playerInventory.myInventory.Count; i++)
             {
-                if (inventorySlot)
+                if (inventorySlot && playerInventory.myInventory[i].numberOfItem > 0)
                 {
                     GameObject temp = Instantiate(inventorySlot, inventoryPanel.transform.position, Quaternion.identity);
                     temp.transform.SetParent(inventoryPanel.transform);
@@ -42,6 +42,20 @@ public class InventoryManager : MonoBehaviour
         if(currentItem)
         {
             currentItem.Use();
+            ClearSlots();
+            MakeInventorySlots();
+            if(currentItem.numberOfItem == 0)
+            {
+                SetTextAndButton("", false, null);
+            }
+        }
+    }
+
+    private void ClearSlots()
+    {
+        for (int i = 0; i < inventoryPanel.transform.childCount; i++)
+        {
+            Destroy(inventoryPanel.transform.GetChild(i).gameObject);
         }
     }
     void Start()
