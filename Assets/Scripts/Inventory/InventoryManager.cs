@@ -58,8 +58,9 @@ public class InventoryManager : MonoBehaviour
             Destroy(inventoryPanel.transform.GetChild(i).gameObject);
         }
     }
-    void Start()
+    void OnEnable()
     {
+        ClearSlots();
         MakeInventorySlots();
         SetTextAndButton("", false, null);
     }
