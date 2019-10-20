@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class TreasureChest : Interactable
 {
-    public Item content;
-    public Inventory playerInventory;
+    public InventoryItem content;
+    public PlayerInventory playerInventory;
     public Signal raiseItemSignal;
     public BoolValue isOpen;
     public GameObject dialogBox;

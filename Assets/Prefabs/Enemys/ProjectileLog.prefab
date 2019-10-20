@@ -213,6 +213,8 @@ MonoBehaviour:
   deathEffect: {fileID: 6630030916625991011, guid: 62acc29dbb469a94786f9d3cd019dcfb,
     type: 3}
   homePosition: {x: 43, y: -5}
+  enemyOpenDoorSignal: {fileID: 0}
+  lootTable: {fileID: 11400000, guid: 246d4607b8c97c8489cd2eafe27a63ec, type: 2}
   target: {fileID: 0}
   chaseRadius: 6
   attackRadius: 0

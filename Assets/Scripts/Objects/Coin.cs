@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coin : PowerUp
 {
     public Signal receiveCoinSignal;
-    public Inventory playerInventory;
+    public PlayerInventory playerInventory;
     void Start()
     {
         receiveCoinSignal.Raise();

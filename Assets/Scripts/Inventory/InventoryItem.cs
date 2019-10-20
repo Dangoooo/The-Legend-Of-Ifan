@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Items")]
+[System.Serializable]
 public class InventoryItem : ScriptableObject
 {
     public string itemName;
@@ -12,6 +13,7 @@ public class InventoryItem : ScriptableObject
     public int numberOfItem;
     public bool usable;
     public bool unique;
+    public bool isKey;
     public UnityEvent thisEvent;
 
     public void Use()

@@ -11,7 +11,7 @@ public enum DoorType
 public class Door : Interactable
 {
     public DoorType currentDoorType;
-    public Inventory playerInventory;
+    public PlayerInventory playerInventory;
     public BoolValue isOpen;
     public SpriteRenderer doorSprite;
     public Sprite doorOpenSprite;

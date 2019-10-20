@@ -46,6 +46,7 @@ public class InventoryManager : MonoBehaviour
             MakeInventorySlots();
             if(currentItem.numberOfItem == 0)
             {
+                playerInventory.myInventory.Remove(currentItem);
                 SetTextAndButton("", false, null);
             }
         }

@@ -20,7 +20,9 @@ public class PlayerMove : MonoBehaviour
     public FloatValue currentHealth;
     public Signal playerHealthSignal;
     public VectorValue playerPosition;
-    public Inventory playerInventory;
+    public PlayerInventory playerInventory;
+    public InventoryItem sword;
+    public InventoryItem bow;
     public SpriteRenderer receiveItemSprite;
     public GameObject receiveItem;
     public GameObject projectile;
@@ -53,11 +55,11 @@ public class PlayerMove : MonoBehaviour
         change = Vector2.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if(Input.GetButtonDown("Attack") && currentState != PlayerState.attack&&currentState != PlayerState.stagger)
+        if(Input.GetButtonDown("Attack") && currentState != PlayerState.attack&&currentState != PlayerState.stagger && playerInventory.myInventory.Contains(sword))
         {
                 StartCoroutine(AttackCo());
         }
-        else if (Input.GetButtonDown("SecondWeapen") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
+        else if (Input.GetButtonDown("SecondWeapen") && currentState != PlayerState.attack && currentState != PlayerState.stagger&&playerInventory.myInventory.Contains(bow))
         {
             if (playerMagic.initialValue > 0)
             {

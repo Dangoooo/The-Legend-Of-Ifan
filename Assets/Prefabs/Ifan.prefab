@@ -89,7 +89,6 @@ GameObject:
   m_Component:
   - component: {fileID: 113780579}
   - component: {fileID: 113780580}
-  - component: {fileID: 113780581}
   m_Layer: 8
   m_Name: ReceiveItem
   m_TagString: Untagged
@@ -159,35 +158,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &113780581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113780578}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac24fc7231dd2a84287f863ca4413969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: 525a6dee51b181c45a62d502b1d2cc41, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2069395349}
-        m_MethodName: ChangeContextClue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &751151129
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +828,9 @@ MonoBehaviour:
   currentHealth: {fileID: 11400000, guid: 0a41e200fe09706468046c350ffd8ea7, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: e522d3a5bd8107c428bb006d25fa1b8c, type: 2}
   playerPosition: {fileID: 11400000, guid: 59bcec906e84bba4db11c5b548e6f2d3, type: 2}
-  playerInventory: {fileID: 11400000, guid: 021ab5adeec22474f9bcef5453a860ae, type: 2}
+  playerInventory: {fileID: 11400000, guid: efa5e4c98f75b9a4fb9b9571e45870ad, type: 2}
+  sword: {fileID: 11400000, guid: f5c052869365c344ca4fad87bec65106, type: 2}
+  bow: {fileID: 11400000, guid: a629792fb5ec544448d5a64d0cca0e8d, type: 2}
   receiveItemSprite: {fileID: 113780580}
   receiveItem: {fileID: 113780578}
   projectile: {fileID: 2874934159208068172, guid: 095d6be2e1352d74eaba50a324344506,

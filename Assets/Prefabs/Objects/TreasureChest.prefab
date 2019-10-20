@@ -168,8 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contextClueSignal: {fileID: 11400000, guid: 525a6dee51b181c45a62d502b1d2cc41, type: 2}
   playerInRange: 0
-  content: {fileID: 11400000, guid: 018e7e53065462a4fac5c2b02bdf07ae, type: 2}
-  playerInventory: {fileID: 11400000, guid: 021ab5adeec22474f9bcef5453a860ae, type: 2}
+  content: {fileID: 11400000, guid: 6533a40ac3d99584d915ed1bf7b98d73, type: 2}
+  playerInventory: {fileID: 11400000, guid: efa5e4c98f75b9a4fb9b9571e45870ad, type: 2}
   raiseItemSignal: {fileID: 11400000, guid: 546238ded081c0e4da0235624ee5f88a, type: 2}
   isOpen: {fileID: 11400000, guid: 5becca0b3e604c942a2e95a8d40cd4ad, type: 2}
   dialogBox: {fileID: 0}

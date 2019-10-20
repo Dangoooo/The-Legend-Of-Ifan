@@ -7,7 +7,7 @@ public class CoinManager : MonoBehaviour
 {
     public Signal receiveCoinSignal;
     public TextMeshProUGUI coinText;
-    public Inventory playerInventory;
+    public PlayerInventory playerInventory;
     void Start()
     {
         

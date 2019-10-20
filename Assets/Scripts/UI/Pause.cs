@@ -8,7 +8,6 @@ public class Pause : MonoBehaviour
     public GameObject pausePanel;
     public GameObject inventoryPanel;
     private bool isPaused;
-    private bool isPausePanel;
     void Start()
     {
         pausePanel.SetActive(false);
@@ -39,13 +38,11 @@ public class Pause : MonoBehaviour
         if (isPaused)
         {
             pausePanel.SetActive(true);
-            isPausePanel = true;
             Time.timeScale = 0f;
         }
         else
         {
             pausePanel.SetActive(false);
-            isPausePanel = false;
             Time.timeScale = 1f;
         }
     }
@@ -58,7 +55,6 @@ public class Pause : MonoBehaviour
     public void SwitchPanel()
     {
         pausePanel.SetActive(false);
-        isPausePanel = false;
         inventoryPanel.SetActive(true);
     }
 
