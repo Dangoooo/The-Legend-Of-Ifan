@@ -14,6 +14,7 @@ public class HeartManager : MonoBehaviour
     void Start()
     {
         InitHeart();
+        UpdateHeart();
     }
 
     private void InitHeart()

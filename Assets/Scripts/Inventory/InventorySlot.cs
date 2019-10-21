@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI numberOfItemText;
-    [SerializeField] private Image itemImage;
+    public  TextMeshProUGUI numberOfItemText;
+    public Image itemImage;
     //public Sprite itemSprite;
    // public int numberOfItem;
    // public string itemDescription;

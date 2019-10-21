@@ -33,11 +33,10 @@ public class Enemy : MonoBehaviour
         health = maxHealth.initialValue;
         transform.position = homePosition;
     }
-    public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage)
+    public void Knock(Rigidbody2D myRigidbody, float knockTime)
     {
         if(currentState != EnemyState.stagger)
         {
-            TakeDamage(damage);
             if (health > 0)
             {
                 StartCoroutine(KnockCo(myRigidbody, knockTime));

@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public PlayerInventory playerInventory;
-    [SerializeField] private GameObject inventorySlot;
-    [SerializeField] private GameObject inventoryPanel;
-    [SerializeField] private TextMeshProUGUI itemDescriptionText;
-    [SerializeField] private GameObject useButton;
+    public GameObject inventorySlot;
+    public GameObject inventoryPanel;
+    public TextMeshProUGUI itemDescriptionText;
+    public  GameObject useButton;
     private InventoryItem currentItem;
 
     public void SetTextAndButton(string itemDescription, bool buttonActive, InventoryItem newItem)

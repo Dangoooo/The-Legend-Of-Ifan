@@ -17,8 +17,10 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D myRigidbody;
     Animator animator;
     Vector2 change;
-    public FloatValue currentHealth;
-    public Signal playerHealthSignal;
+
+    //public FloatValue currentHealth;
+    //public Signal playerHealthSignal;
+
     public VectorValue playerPosition;
     public PlayerInventory playerInventory;
     public InventoryItem sword;
@@ -141,20 +143,21 @@ public class PlayerMove : MonoBehaviour
         myRigidbody.MovePosition(myRigidbody.position + change * speed * Time.deltaTime);
     }
 
-    public void Knock(float knockTime, float damage)
+    public void Knock(float knockTime)
     {
         if(currentState != PlayerState.stagger)
         {
-            currentHealth.initialValue -= damage;
-            playerHealthSignal.Raise();
-            if (currentHealth.initialValue > 0)
-            {
-                StartCoroutine(KnockCo(knockTime));
-            }
-            else
-            {
-                this.gameObject.SetActive(false);
-            }
+            StartCoroutine(KnockCo(knockTime));
+            //currentHealth.initialValue -= damage;
+            //playerHealthSignal.Raise();
+            //if (currentHealth.initialValue > 0)
+            //{
+                
+            //}
+            //else
+            //{
+            //    this.gameObject.SetActive(false);
+            //}
         }
     }
     IEnumerator KnockCo(float knockTime)
