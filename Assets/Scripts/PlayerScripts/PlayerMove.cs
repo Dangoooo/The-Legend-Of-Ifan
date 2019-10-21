@@ -61,7 +61,7 @@ public class PlayerMove : MonoBehaviour
         {
                 StartCoroutine(AttackCo());
         }
-        else if (Input.GetButtonDown("SecondWeapen") && currentState != PlayerState.attack && currentState != PlayerState.stagger&&playerInventory.myInventory.Contains(bow))
+        else if (Input.GetButtonDown("Ability") && currentState != PlayerState.attack && currentState != PlayerState.stagger&&playerInventory.myInventory.Contains(bow))
         {
             if (playerMagic.initialValue > 0)
             {

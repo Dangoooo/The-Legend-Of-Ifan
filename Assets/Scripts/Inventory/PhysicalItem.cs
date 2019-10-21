@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PhysicalItem : MonoBehaviour
 {
-    [SerializeField] private PlayerInventory playerInventory;
-    [SerializeField] private InventoryItem thisItem;
+    public PlayerInventory playerInventory;
+    public InventoryItem thisItem;
     void Start()
     {
         
