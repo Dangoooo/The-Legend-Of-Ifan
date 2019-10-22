@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -76,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -87,7 +94,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -179,8 +187,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 908241157}
 --- !u!114 &26912899
@@ -282,8 +288,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1471976930}
 --- !u!114 &33532905
@@ -519,6 +523,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -655,8 +660,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &225092288
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +729,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -831,8 +835,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1629053797}
 --- !u!114 &228524488
@@ -993,6 +995,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650127605370083008, guid: 1f52b499c5dc3e442958fe687c9f51ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7650127605327704856, guid: 1f52b499c5dc3e442958fe687c9f51ef,
         type: 3}
@@ -1284,6 +1291,7 @@ CompositeCollider2D:
       - {x: 14.375, y: -0.5}
       - {x: 14.687501, y: -0.5}
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!50 &407605820
 Rigidbody2D:
   serializedVersion: 4
@@ -1319,6 +1327,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &407605822
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -1344,6 +1354,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1758,18 +1769,57 @@ PrefabInstance:
       objectReference: {fileID: 1575544579}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea848ca912663c546a20be3685e06dbb, type: 3}
+--- !u!1 &480198213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8153593380866140290, guid: ea848ca912663c546a20be3685e06dbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 480198212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &480198214 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8153593380866140312, guid: ea848ca912663c546a20be3685e06dbb,
     type: 3}
   m_PrefabInstance: {fileID: 480198212}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 480198213}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5493eb79c0ea86439ad4fe4307f41b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &480198215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480198213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e04a53d5a27eb4794dee40b378cb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: 823b9ed177611f64d851d8d044f4012d, type: 2}
+  currentHealth: 0
+  enemyOpenDoorSignal: {fileID: 11400000, guid: d58c853dc61496b4ea744b99f785bc25,
+    type: 2}
+  lootTable: {fileID: 11400000, guid: 246d4607b8c97c8489cd2eafe27a63ec, type: 2}
+  deathEffect: {fileID: 6630030916625991011, guid: 62acc29dbb469a94786f9d3cd019dcfb,
+    type: 3}
+--- !u!114 &480198216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480198213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321041f0b5be298448dddc835cc542f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0.5
+  otherTag: Player
 --- !u!1 &484727959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,8 +1887,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1947009665}
 --- !u!114 &484727962
@@ -2138,6 +2186,7 @@ CompositeCollider2D:
       - {x: 1, y: -16}
       - {x: 16, y: -16}
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!50 &507232578
 Rigidbody2D:
   serializedVersion: 4
@@ -2173,6 +2222,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &507232580
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -2198,6 +2249,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2967,9 +3019,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -3041,13 +3094,9 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &664179082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3147,6 +3196,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3468,6 +3518,7 @@ CompositeCollider2D:
       - {x: 14.187501, y: -12}
       - {x: 14.937501, y: -12}
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!50 &682639972
 Rigidbody2D:
   serializedVersion: 4
@@ -3503,6 +3554,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &682639974
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -3528,6 +3581,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3821,6 +3875,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4020,6 +4075,7 @@ CompositeCollider2D:
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!50 &904734774
 Rigidbody2D:
   serializedVersion: 4
@@ -4055,6 +4111,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &904734776
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -4080,6 +4138,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4305,7 +4364,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 942151081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &966504007
@@ -4365,6 +4424,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -7114,6 +7174,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -7204,8 +7265,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 244966355}
 --- !u!114 &983851553
@@ -7541,6 +7600,7 @@ CompositeCollider2D:
       - {x: 9, y: -17}
       - {x: 17, y: -17}
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!50 &1090872330
 Rigidbody2D:
   serializedVersion: 4
@@ -7576,6 +7636,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1090872332
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -7601,6 +7663,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -8374,18 +8437,57 @@ PrefabInstance:
       objectReference: {fileID: 1575544579}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea848ca912663c546a20be3685e06dbb, type: 3}
+--- !u!1 &1095725447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8153593380866140290, guid: ea848ca912663c546a20be3685e06dbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1095725446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1095725448 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8153593380866140312, guid: ea848ca912663c546a20be3685e06dbb,
     type: 3}
   m_PrefabInstance: {fileID: 1095725446}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1095725447}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5493eb79c0ea86439ad4fe4307f41b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1095725449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095725447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e04a53d5a27eb4794dee40b378cb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: 823b9ed177611f64d851d8d044f4012d, type: 2}
+  currentHealth: 0
+  enemyOpenDoorSignal: {fileID: 11400000, guid: d58c853dc61496b4ea744b99f785bc25,
+    type: 2}
+  lootTable: {fileID: 11400000, guid: 246d4607b8c97c8489cd2eafe27a63ec, type: 2}
+  deathEffect: {fileID: 6630030916625991011, guid: 62acc29dbb469a94786f9d3cd019dcfb,
+    type: 3}
+--- !u!114 &1095725450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095725447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321041f0b5be298448dddc835cc542f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0.5
+  otherTag: Player
 --- !u!1 &1096899376
 GameObject:
   m_ObjectHideFlags: 0
@@ -8443,6 +8545,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -11395,6 +11498,7 @@ CompositeCollider2D:
       - {x: 15.375, y: -0.5}
       - {x: 15.687501, y: -0.5}
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!50 &1156277952
 Rigidbody2D:
   serializedVersion: 4
@@ -11430,6 +11534,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1156277954
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -11455,6 +11561,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -12055,6 +12162,7 @@ CompositeCollider2D:
       - {x: 13, y: -5}
       - {x: 13, y: -9}
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!50 &1211779116
 Rigidbody2D:
   serializedVersion: 4
@@ -12090,6 +12198,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1211779118
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -12115,6 +12225,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -13186,6 +13297,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -16026,6 +16138,7 @@ CompositeCollider2D:
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!50 &1314827539
 Rigidbody2D:
   serializedVersion: 4
@@ -16061,6 +16174,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1314827541
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -16086,6 +16201,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -16515,6 +16631,7 @@ CompositeCollider2D:
       - {x: 12, y: -11}
       - {x: 12, y: -12}
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!50 &1403485010
 Rigidbody2D:
   serializedVersion: 4
@@ -16550,6 +16667,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1403485012
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -16575,6 +16694,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -17743,6 +17863,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -20545,7 +20666,7 @@ MonoBehaviour:
   contextClueSignal: {fileID: 11400000, guid: 525a6dee51b181c45a62d502b1d2cc41, type: 2}
   playerInRange: 0
   currentDoorType: 2
-  playerInventory: {fileID: 11400000, guid: 021ab5adeec22474f9bcef5453a860ae, type: 2}
+  playerInventory: {fileID: 0}
   isOpen: {fileID: 11400000, guid: 9a18ed7a10ad5194dbd47f9a70440424, type: 2}
   doorSprite: {fileID: 225092290}
   doorOpenSprite: {fileID: 21300090, guid: dcf5256582cc0d64cb19155b399ccf1b, type: 3}
@@ -20850,6 +20971,7 @@ CompositeCollider2D:
       - {x: 1, y: -17}
       - {x: 8, y: -17}
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!50 &1516775795
 Rigidbody2D:
   serializedVersion: 4
@@ -20885,6 +21007,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1516775797
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -20910,6 +21034,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -21630,6 +21755,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -24626,6 +24752,45 @@ PrefabInstance:
       objectReference: {fileID: 1575544579}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea848ca912663c546a20be3685e06dbb, type: 3}
+--- !u!1 &1876609172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8153593380866140290, guid: ea848ca912663c546a20be3685e06dbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1876609171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1876609173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876609172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e04a53d5a27eb4794dee40b378cb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: 823b9ed177611f64d851d8d044f4012d, type: 2}
+  currentHealth: 0
+  enemyOpenDoorSignal: {fileID: 11400000, guid: d58c853dc61496b4ea744b99f785bc25,
+    type: 2}
+  lootTable: {fileID: 11400000, guid: 246d4607b8c97c8489cd2eafe27a63ec, type: 2}
+  deathEffect: {fileID: 6630030916625991011, guid: 62acc29dbb469a94786f9d3cd019dcfb,
+    type: 3}
+--- !u!114 &1876609174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876609172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321041f0b5be298448dddc835cc542f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0.5
+  otherTag: Player
 --- !u!1 &1933612087
 GameObject:
   m_ObjectHideFlags: 0
@@ -24797,7 +24962,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1876609171}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1876609172}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5493eb79c0ea86439ad4fe4307f41b9, type: 3}
@@ -24850,7 +25015,7 @@ MonoBehaviour:
   contextClueSignal: {fileID: 11400000, guid: 525a6dee51b181c45a62d502b1d2cc41, type: 2}
   playerInRange: 0
   currentDoorType: 1
-  playerInventory: {fileID: 11400000, guid: 021ab5adeec22474f9bcef5453a860ae, type: 2}
+  playerInventory: {fileID: 0}
   isOpen: {fileID: 11400000, guid: 56d90c0f2ce222947b1f2c9b22631561, type: 2}
   doorSprite: {fileID: 841390385}
   doorOpenSprite: {fileID: 0}
@@ -24996,7 +25161,7 @@ MonoBehaviour:
   contextClueSignal: {fileID: 11400000, guid: 525a6dee51b181c45a62d502b1d2cc41, type: 2}
   playerInRange: 0
   currentDoorType: 0
-  playerInventory: {fileID: 11400000, guid: 021ab5adeec22474f9bcef5453a860ae, type: 2}
+  playerInventory: {fileID: 0}
   isOpen: {fileID: 11400000, guid: a81b65f0560a3a44093da02e18c40240, type: 2}
   doorSprite: {fileID: 8944309849942775482}
   doorOpenSprite: {fileID: 21300090, guid: dcf5256582cc0d64cb19155b399ccf1b, type: 3}
@@ -25045,6 +25210,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

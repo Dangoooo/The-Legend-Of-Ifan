@@ -34,10 +34,12 @@ public class PlayerMove : MonoBehaviour
     public Color regularColor;
     public float flareDuration;
     private SpriteRenderer mySpriteRenderer;
-    public Collider2D triggerCollider;
+    private Collider2D triggerCollider;
+    public GameObject playerHealth;
     public int numberOfFlare;
     void Start()
     {
+        triggerCollider = playerHealth.GetComponent<Collider2D>();
         transform.position = playerPosition.initialValue;
         currentState = PlayerState.idle;
         myRigidbody = GetComponent<Rigidbody2D>();

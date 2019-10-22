@@ -56,6 +56,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -135,6 +136,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -214,6 +216,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -307,8 +310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e119617f8d6ad45a49e0c7c59fc527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: {fileID: 11400000, guid: 0a41e200fe09706468046c350ffd8ea7, type: 2}
+  maxHealth: {fileID: 0}
+  currentHealth: 0
   healthSignal: {fileID: 11400000, guid: e522d3a5bd8107c428bb006d25fa1b8c, type: 2}
+  player: {fileID: 3615418328161044500}
+  playerHealth: {fileID: 11400000, guid: 0a41e200fe09706468046c350ffd8ea7, type: 2}
 --- !u!1 &2104888082
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,9 +359,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -390,7 +397,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104888082}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &3615418326933258913
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +409,7 @@ GameObject:
   - component: {fileID: 3615418326933258912}
   - component: {fileID: 3615418326933258919}
   - component: {fileID: 3615418326933258918}
+  - component: {fileID: 318935622}
   m_Layer: 8
   m_Name: hitBoxLeft
   m_TagString: Hit
@@ -466,6 +474,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 5
   knockTime: 0.2
+--- !u!114 &318935622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615418326933258913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cf6664902481949989bdd9d7490ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  otherTag: Enemy
 --- !u!1 &3615418327741507202
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +499,7 @@ GameObject:
   - component: {fileID: 3615418327741507201}
   - component: {fileID: 3615418327741507200}
   - component: {fileID: 3615418327741507207}
+  - component: {fileID: 514214863}
   m_Layer: 8
   m_Name: hitBoxDown
   m_TagString: Hit
@@ -541,6 +564,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 5
   knockTime: 0.2
+--- !u!114 &514214863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615418327741507202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cf6664902481949989bdd9d7490ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  otherTag: Enemy
 --- !u!1 &3615418327959404144
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +589,7 @@ GameObject:
   - component: {fileID: 3615418327959404151}
   - component: {fileID: 3615418327959404150}
   - component: {fileID: 3615418327959404149}
+  - component: {fileID: 199187797}
   m_Layer: 8
   m_Name: hitBoxUp
   m_TagString: Hit
@@ -616,6 +654,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 5
   knockTime: 0.2
+--- !u!114 &199187797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615418327959404144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cf6664902481949989bdd9d7490ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  otherTag: Enemy
 --- !u!1 &3615418328133820835
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +679,7 @@ GameObject:
   - component: {fileID: 3615418328133820834}
   - component: {fileID: 3615418328133820833}
   - component: {fileID: 3615418328133820832}
+  - component: {fileID: 834246194}
   m_Layer: 8
   m_Name: hitBoxRight
   m_TagString: Hit
@@ -691,6 +744,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 5
   knockTime: 0.2
+--- !u!114 &834246194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615418328133820835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cf6664902481949989bdd9d7490ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  otherTag: Enemy
 --- !u!1 &3615418328161044500
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +831,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -923,8 +991,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1340996737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -952,8 +1018,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &741552389
 MonoBehaviour:
   m_ObjectHideFlags: 0

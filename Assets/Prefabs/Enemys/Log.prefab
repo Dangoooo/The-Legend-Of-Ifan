@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 8153593380866140312}
   - component: {fileID: 8153593380866140313}
   - component: {fileID: 8153593380866140314}
+  - component: {fileID: 8756838332020085042}
+  - component: {fileID: 8945794270337662510}
   m_Layer: 10
   m_Name: Log
   m_TagString: Enemy
@@ -62,6 +64,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -164,13 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  maxHealth: {fileID: 11400000, guid: 823b9ed177611f64d851d8d044f4012d, type: 2}
-  health: 5
   moveSpeed: 1
   baseAttack: 2
   enemyName: Log
-  deathEffect: {fileID: 6630030916625991011, guid: 62acc29dbb469a94786f9d3cd019dcfb,
-    type: 3}
   homePosition: {x: 17, y: -13}
   target: {fileID: 0}
   chaseRadius: 4
@@ -216,4 +215,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 5
   knockTime: 0.2
+--- !u!114 &8756838332020085042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153593380866140290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321041f0b5be298448dddc835cc542f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   damage: 0.5
+  otherTag: Player
+--- !u!114 &8945794270337662510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153593380866140290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e04a53d5a27eb4794dee40b378cb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: 823b9ed177611f64d851d8d044f4012d, type: 2}
+  currentHealth: 0
+  enemyOpenDoorSignal: {fileID: 11400000, guid: d58c853dc61496b4ea744b99f785bc25,
+    type: 2}
+  lootTable: {fileID: 11400000, guid: 246d4607b8c97c8489cd2eafe27a63ec, type: 2}
+  deathEffect: {fileID: 6630030916625991011, guid: 62acc29dbb469a94786f9d3cd019dcfb,
+    type: 3}

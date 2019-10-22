@@ -297,8 +297,8 @@ InputManager:
     m_Name: Ability
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: m
-    positiveButton: 
+    negativeButton: 
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: joystick button 2
     gravity: 1000

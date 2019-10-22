@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class GenericHealth : MonoBehaviour
 {
-    public FloatValue currentHealth;
-    void Start()
+    public FloatValue maxHealth;
+    public float currentHealth;
+    private void Start()
     {
-  
+        currentHealth = maxHealth.initialValue;
+    }
+    private void OnEnable()
+    {
+        currentHealth = maxHealth.initialValue;
     }
 
     // Update is called once per frame
@@ -18,29 +23,29 @@ public class GenericHealth : MonoBehaviour
 
     public  virtual void Heal(float amountToHeal)
     {
-        currentHealth.initialValue += amountToHeal;
-        if(currentHealth.initialValue > currentHealth.defaultValue)
+        currentHealth += amountToHeal;
+        if(currentHealth > maxHealth.initialValue)
         {
-            currentHealth.initialValue = currentHealth.defaultValue;
+            currentHealth = maxHealth.initialValue;
         }
     }
 
     public virtual void FullHeal()
     {
-        currentHealth.initialValue = currentHealth.defaultValue;
+        currentHealth = maxHealth.initialValue;
     }
 
     public virtual void Damage(float amountToDamage)
     {
-        currentHealth.initialValue -= amountToDamage;
-        if(currentHealth.initialValue < 0)
+        currentHealth -= amountToDamage;
+        if(currentHealth < 0)
         {
-            currentHealth.initialValue = 0;
+            currentHealth = 0;
         }
     }
 
     public virtual void InstantDeath()
     {
-        currentHealth.initialValue = 0;
+        currentHealth = 0;
     }
 }
