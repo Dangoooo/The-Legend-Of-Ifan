@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagicBottle : PowerUp
 {
-    public Signal addMagicSignal;
+    public ReSignal addMagicSignal;
     public FloatValue playerMagic;
     void Start()
     {

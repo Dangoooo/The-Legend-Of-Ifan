@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthReaction : MonoBehaviour
 {
-    public Signal healthSignal;
+    public ReSignal healthSignal;
     public FloatValue playerHealth;
     void Start()
     {

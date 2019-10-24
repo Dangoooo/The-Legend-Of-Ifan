@@ -29,7 +29,7 @@ public class Door : Interactable
     
     void Update()
     {
-        if(Input.GetButtonDown("Attack") && playerInRange)
+        if(Input.GetButtonDown("Check") && playerInRange)
         {
             if(!isOpen.initialValue)
             {

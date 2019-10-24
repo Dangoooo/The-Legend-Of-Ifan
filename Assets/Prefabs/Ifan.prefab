@@ -935,6 +935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 4
   speed: 8
+  attackDuration: 0.2
   playerPosition: {fileID: 11400000, guid: 59bcec906e84bba4db11c5b548e6f2d3, type: 2}
   playerInventory: {fileID: 11400000, guid: efa5e4c98f75b9a4fb9b9571e45870ad, type: 2}
   sword: {fileID: 11400000, guid: f5c052869365c344ca4fad87bec65106, type: 2}
@@ -949,8 +950,9 @@ MonoBehaviour:
   flareColor: {r: 0.5377358, g: 0.19893327, b: 0.11921501, a: 0.6431373}
   regularColor: {r: 1, g: 1, b: 1, a: 1}
   flareDuration: 0.07
-  triggerCollider: {fileID: 0}
+  playerHealth: {fileID: 1680368972}
   numberOfFlare: 3
+  currentAbility: {fileID: 11400000, guid: 2095b985b18fb0d41b30c88d38d33e52, type: 2}
 --- !u!114 &2069395349
 MonoBehaviour:
   m_ObjectHideFlags: 0

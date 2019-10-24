@@ -297,8 +297,8 @@ InputManager:
     m_Name: Ability
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: q
+    negativeButton: q
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: joystick button 2
     gravity: 1000
@@ -314,6 +314,22 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: escape
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: joystick button 7
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Check
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: f
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: joystick button 7

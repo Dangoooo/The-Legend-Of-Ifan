@@ -5,7 +5,7 @@ using TMPro;
 
 public class CoinManager : MonoBehaviour
 {
-    public Signal receiveCoinSignal;
+    public ReSignal receiveCoinSignal;
     public TextMeshProUGUI coinText;
     public PlayerInventory playerInventory;
     void Start()

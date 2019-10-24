@@ -922,12 +922,12 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneWidth: 0.25
+  m_DeadZoneHeight: 0.25
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_SoftZoneWidth: 0.45
+  m_SoftZoneHeight: 0.45
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -1125,10 +1125,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2133782262, guid: 1f52b499c5dc3e442958fe687c9f51ef, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7650127605327704863, guid: 1f52b499c5dc3e442958fe687c9f51ef,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0000061989
+      value: -0.0000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 7650127605327704863, guid: 1f52b499c5dc3e442958fe687c9f51ef,
         type: 3}
@@ -1138,7 +1142,7 @@ PrefabInstance:
     - target: {fileID: 7650127605327704863, guid: 1f52b499c5dc3e442958fe687c9f51ef,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000015259
+      value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 7650127605327704863, guid: 1f52b499c5dc3e442958fe687c9f51ef,
         type: 3}
@@ -3058,7 +3062,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644760282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.86, y: 11.36, z: -10}
+  m_LocalPosition: {x: 6.3243246, y: -11, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7225,7 +7229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983851550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.86, y: 11.36, z: -10}
+  m_LocalPosition: {x: 8.5, y: -13.73, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 244966355}

@@ -8,18 +8,20 @@ public enum PlayerState
     attack,
     interact,
     stagger,
-    idle
+    idle,
+    dead,
+    ability
 }
 public class PlayerMove : MonoBehaviour
 {
     public PlayerState currentState;
     public float speed;
+    public float attackDuration;
     Rigidbody2D myRigidbody;
     Animator animator;
     Vector2 change;
+    Vector2 facingDirection;
 
-    //public FloatValue currentHealth;
-    //public Signal playerHealthSignal;
 
     public VectorValue playerPosition;
     public PlayerInventory playerInventory;
@@ -28,7 +30,7 @@ public class PlayerMove : MonoBehaviour
     public SpriteRenderer receiveItemSprite;
     public GameObject receiveItem;
     public GameObject projectile;
-    public Signal decreaseMagicSignal;
+    public ReSignal decreaseMagicSignal;
     public FloatValue playerMagic;
     public Color flareColor;
     public Color regularColor;
@@ -37,8 +39,11 @@ public class PlayerMove : MonoBehaviour
     private Collider2D triggerCollider;
     public GameObject playerHealth;
     public int numberOfFlare;
+
+    public GenericAbility currentAbility;
     void Start()
     {
+        facingDirection = Vector2.down;
         triggerCollider = playerHealth.GetComponent<Collider2D>();
         transform.position = playerPosition.initialValue;
         currentState = PlayerState.idle;
@@ -59,17 +64,16 @@ public class PlayerMove : MonoBehaviour
         change = Vector2.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if(Input.GetButtonDown("Attack") && currentState != PlayerState.attack&&currentState != PlayerState.stagger && playerInventory.myInventory.Contains(sword))
+        if(Input.GetButtonDown("Attack") && currentState != PlayerState.attack&&currentState != PlayerState.stagger && currentState != PlayerState.ability && playerInventory.myInventory.Contains(sword))
         {
-                StartCoroutine(AttackCo());
+                StartCoroutine(AttackCo(attackDuration));
         }
-        else if (Input.GetButtonDown("Ability") && currentState != PlayerState.attack && currentState != PlayerState.stagger&&playerInventory.myInventory.Contains(bow))
+        else if (Input.GetButtonDown("Ability") && currentState != PlayerState.attack && currentState != PlayerState.stagger && currentState != PlayerState.ability)
         {
-            if (playerMagic.initialValue > 0)
+             if(currentAbility)
             {
-                StartCoroutine(SecondAttackCo());
+                StartCoroutine(AbilityCo(currentAbility.duration));
             }
-              
         }
         else if (currentState == PlayerState.walk||currentState == PlayerState.idle)
         {
@@ -77,17 +81,22 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private IEnumerator AttackCo()
+    private IEnumerator AttackCo(float attackDuration)
     {
         currentState = PlayerState.attack;
         animator.SetBool("attacking", true);
-        yield return null;
+        yield return new WaitForSeconds(attackDuration);
         animator.SetBool("attacking", false);
-        //yield return new WaitForSeconds(0.3f);
-        if(currentState != PlayerState.interact)
-        {
-            currentState = PlayerState.idle;
-        }
+        currentState = PlayerState.idle;
+      
+    }
+
+    public IEnumerator AbilityCo(float abilityDuration)
+    {
+        currentState = PlayerState.ability;
+        currentAbility.Ability(myRigidbody.position, facingDirection, animator, myRigidbody);
+        yield return new WaitForSeconds(abilityDuration);
+        currentState = PlayerState.idle;
     }
 
     private IEnumerator SecondAttackCo()
@@ -101,6 +110,7 @@ public class PlayerMove : MonoBehaviour
             currentState = PlayerState.idle;
         }
     }
+
 
     public void RaiseItem()
     {
@@ -130,6 +140,7 @@ public class PlayerMove : MonoBehaviour
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
             animator.SetBool("moving", true);
+            facingDirection = change.normalized;
             currentState = PlayerState.walk;
             MoveCharacter();
         }
@@ -150,16 +161,6 @@ public class PlayerMove : MonoBehaviour
         if(currentState != PlayerState.stagger)
         {
             StartCoroutine(KnockCo(knockTime));
-            //currentHealth.initialValue -= damage;
-            //playerHealthSignal.Raise();
-            //if (currentHealth.initialValue > 0)
-            //{
-                
-            //}
-            //else
-            //{
-            //    this.gameObject.SetActive(false);
-            //}
         }
     }
     IEnumerator KnockCo(float knockTime)

@@ -7,7 +7,7 @@ public class TreasureChest : Interactable
 {
     public InventoryItem content;
     public PlayerInventory playerInventory;
-    public Signal raiseItemSignal;
+    public ReSignal raiseItemSignal;
     public BoolValue isOpen;
     public GameObject dialogBox;
     public Text dialogText;
@@ -24,7 +24,7 @@ public class TreasureChest : Interactable
     
     void Update()
     {
-        if (Input.GetButtonDown("Attack") && playerInRange)
+        if (Input.GetButtonDown("Check") && playerInRange)
         {
             if(!isOpen.initialValue)
             {

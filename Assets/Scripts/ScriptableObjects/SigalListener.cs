@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class SigalListener : MonoBehaviour
 {
-    public Signal signal;
+    public ReSignal signal;
     public UnityEvent signalEvent;
     public void OnSignalRaised()
     {

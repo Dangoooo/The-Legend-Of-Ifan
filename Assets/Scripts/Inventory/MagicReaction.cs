@@ -5,7 +5,7 @@ using UnityEngine;
 public class MagicReaction : MonoBehaviour
 {
     public FloatValue playerMagic;
-    public Signal magicSignal;
+    public ReSignal magicSignal;
     void Start()
     {
         

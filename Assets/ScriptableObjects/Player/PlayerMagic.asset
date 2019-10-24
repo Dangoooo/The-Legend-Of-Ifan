@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerMagic
   m_EditorClassIdentifier: 
   defaultValue: 10
-  initialValue: 15
+  initialValue: 2

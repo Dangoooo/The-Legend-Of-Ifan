@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeartHeal : PowerUp
 {
-    public Signal healthSignal;
+    public ReSignal healthSignal;
     public FloatValue playerHealth;
     public float healthIncrease;
     public FloatValue heartContainers;

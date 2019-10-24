@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    public Signal powerUpSignal;
+    public ReSignal powerUpSignal;
     void Start()
     {
         

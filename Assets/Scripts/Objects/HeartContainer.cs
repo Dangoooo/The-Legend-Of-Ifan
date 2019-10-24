@@ -6,7 +6,7 @@ public class HeartContainer : MonoBehaviour
 {
     public FloatValue heartContainers;
     public FloatValue playerHealth;
-    public Signal healthSignal;
+    public ReSignal healthSignal;
     void Start()
     {
         

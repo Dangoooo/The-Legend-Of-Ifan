@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : PowerUp
 {
-    public Signal receiveCoinSignal;
+    public ReSignal receiveCoinSignal;
     public PlayerInventory playerInventory;
     void Start()
     {

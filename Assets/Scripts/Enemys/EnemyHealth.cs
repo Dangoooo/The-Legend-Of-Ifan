@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : GenericHealth
 {
-    public Signal enemyOpenDoorSignal;
+    public ReSignal enemyOpenDoorSignal;
     public LootTable lootTable;
     public GameObject deathEffect;
     public override void Damage(float amountToDamage)

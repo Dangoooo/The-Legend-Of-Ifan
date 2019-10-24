@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : GenericHealth
 {
-    public Signal healthSignal;
+    public ReSignal healthSignal;
     public GameObject player;
     public FloatValue playerHealth;
 
