@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class MeleeEnemy : Log
 {
+    void Start()
+    {
+        currentState = EnemyState.walk;
+        myRigidbody = GetComponent<Rigidbody2D>();
+        target = GameObject.FindWithTag("Player").transform;
+        anim = GetComponent<Animator>();
+    }
     public override void CheckDistance()
     {
         if (Vector3.Distance(transform.position, target.position) <= chaseRadius && Vector3.Distance(transform.position, target.position) > attackRadius)

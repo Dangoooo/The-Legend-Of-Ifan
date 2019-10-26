@@ -15,12 +15,10 @@ MonoBehaviour:
   itemName: MasterSword
   itemDescription: "\u4E00\u628A\u770B\u8D77\u6765\u5E73\u5E73\u65E0\u5947\u7684\u5251"
   itemSprite: {fileID: 21300000, guid: e57c727af3dca9a4ab3ec51d2aa66eaa, type: 3}
-  numberOfItem: 1
+  numberOfItem: 0
   usable: 0
   unique: 1
   isKey: 0
   thisEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null

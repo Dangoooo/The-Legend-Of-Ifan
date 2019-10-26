@@ -15,7 +15,7 @@ public class DungeonRoomTransfer : RoomTransfer
     {
         for (int i = 0; i < enemies.Length; i++)
         {
-            if(enemies[i].gameObject.activeInHierarchy&&i<enemies.Length-1)
+            if(enemies[i].gameObject.activeInHierarchy && i<enemies.Length-1)
             {
                 return;
             }
