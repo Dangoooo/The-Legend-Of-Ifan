@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84955e465d65a0247b6101119a98e870, type: 3}
   m_Name: General PlayerInventory
   m_EditorClassIdentifier: 
-  myInventory:
-  - {fileID: 11400000, guid: f5c052869365c344ca4fad87bec65106, type: 2}
+  myInventory: []
   currentItem: {fileID: 0}
-  numberOfKeys: 4
+  numberOfKeys: 0
   numberOfCoins: 0

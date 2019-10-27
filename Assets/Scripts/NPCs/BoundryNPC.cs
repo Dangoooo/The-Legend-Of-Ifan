@@ -88,7 +88,7 @@ public class BoundryNPC : Interactable
 
     private void Interact()
     {
-        if(Input.GetButtonDown("Attack") && playerInRange)
+        if(Input.GetButtonDown("Check") && playerInRange)
         {
             
             if (dialogBox.activeInHierarchy)

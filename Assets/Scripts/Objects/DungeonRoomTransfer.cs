@@ -13,14 +13,18 @@ public class DungeonRoomTransfer : RoomTransfer
 
     public void CheckEnemy()
     {
+        int count = 0;
         for (int i = 0; i < enemies.Length; i++)
         {
-            if(enemies[i].gameObject.activeInHierarchy && i<enemies.Length-1)
+            if(enemies[i].gameObject.activeInHierarchy)
             {
-                return;
+                count++;
             }
         }
-        OpenAllDoor();
+        if(count >= 2)
+        {
+            OpenAllDoor();
+        }
     }
 
    public override void OnTriggerEnter2D(Collider2D collision)

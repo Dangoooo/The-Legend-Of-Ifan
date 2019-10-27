@@ -30,7 +30,7 @@ public class KnockBack : MonoBehaviour
             Rigidbody2D hit = collision.GetComponentInParent<Rigidbody2D>();
             if (hit != null)
             {
-                Vector2 difference = hit.transform.position - transform.position;
+                Vector2 difference = (hit.transform.position - transform.position).normalized*thrust;
                 hit.DOMove(difference + hit.position, knockTime);
                 if (collision.gameObject.tag == "Enemy")
                 {

@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b9e3fa854d2934f8cd6ea1785e4f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 5
+  thrust: 2
   knockTime: 0.2
 --- !u!114 &349608385279939360
 MonoBehaviour:
@@ -474,5 +474,10 @@ PrefabInstance:
       propertyPath: currentDestination
       value: 
       objectReference: {fileID: 3504230147743427332}
+    - target: {fileID: 5256805134769931839, guid: a5d2d5eca80082844bc9d078e10af50f,
+        type: 3}
+      propertyPath: thrust
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5d2d5eca80082844bc9d078e10af50f, type: 3}
