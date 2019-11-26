@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2724135949706759255}
   - component: {fileID: 3430774739002675213}
   - component: {fileID: 7143186527060872267}
-  - component: {fileID: 5407454249928344248}
+  - component: {fileID: -8966901588909747090}
   m_Layer: 11
   m_Name: RockProjectile
   m_TagString: Untagged
@@ -151,7 +151,7 @@ MonoBehaviour:
   initialLifeTime: 2
   speed: 2
   myRigidbody: {fileID: 2724135949706759255}
---- !u!114 &5407454249928344248
+--- !u!114 &-8966901588909747090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

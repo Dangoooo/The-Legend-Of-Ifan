@@ -394,7 +394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.7999878}
+  m_AnchoredPosition: {x: 0, y: 0.79992676}
   m_SizeDelta: {x: 0, y: 0.000015259}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &5302450356943724776
@@ -764,7 +764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u94B1\u94B1\u94B1\u94B1\u94B1\u94B1\u94B1"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e5afd0c99cc842b419c1242c6468c7d7, type: 2}
   m_sharedMaterial: {fileID: 21685156291293628, guid: e5afd0c99cc842b419c1242c6468c7d7,
@@ -1554,8 +1554,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000022814682, y: -0.000014254788}
-  m_SizeDelta: {x: 0, y: 35}
+  m_AnchoredPosition: {x: 0.0000038147, y: 0.000011015}
+  m_SizeDelta: {x: 2.9, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &5302450357623105956
 MonoBehaviour:
@@ -1818,7 +1818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5302450357665863843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2096,7 +2096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5302450358199411969
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2172,7 +2172,7 @@ GameObject:
   - component: {fileID: 5302450358216592458}
   - component: {fileID: 5302450358216592462}
   m_Layer: 5
-  m_Name: PauseCanvas 1
+  m_Name: PauseCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

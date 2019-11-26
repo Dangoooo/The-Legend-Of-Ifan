@@ -7,7 +7,7 @@ public class GenericDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == otherTag && collision.isTrigger)
+        if(collision.gameObject.CompareTag(otherTag) && collision.isTrigger)
         {
             GenericHealth temp = collision.gameObject.GetComponent<GenericHealth>();
             if(temp)
